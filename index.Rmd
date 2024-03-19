@@ -1,6 +1,6 @@
 ---
-title: "Week2 Presentation"
-subtitle: "with xaringan"
+title: "Presentation Ninja"
+subtitle: "⚔<br/>with xaringan"
 author: "Yihui Xie"
 institute: "RStudio, PBC"
 date: "2016/12/12 (updated: `r Sys.Date()`)"
