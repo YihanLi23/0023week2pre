@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 ### CASA0023
 ]
 .date[
-### updated: 2024-03-20
+### updated: 2024-03-22
 ]
 
 ---
@@ -38,7 +38,7 @@ class: center, middle, inverse, title-slide
 - Its  optical instrument samples in 13 spectral bands: four bands at 10 metres, six bands at 20 metres and three bands at 60 metres spatial resolution.
 
 &lt;img src="images/Sentinel_2.jpg" width="45%" style="display: block; margin: auto;" /&gt;
-&lt;center&gt;Source:[Wikipedia-Sentinel-2](https://www.nik.com.tr/content_sistem_uydu.asp?id=102)
+&lt;center&gt;Source:Wikipedia-Sentinel-2
 ---
 # What is Sentinel-2 ?
 - The Sentinel-2 constellation made of twin satellites. 
@@ -47,16 +47,20 @@ class: center, middle, inverse, title-slide
 
 - Sentinel-2A was launched on 23 June 2015 and Sentinel-2B was launched on 7 March 2017. 
 
-- Each satellite has a swath width of 290 km  to provide systematic coverage over the 
-following areas:
-(1)all continental land surfaces (including inland waters) between latitudes 84°N and 56°S;
-(2)all coastal waters up to at least 20 km from the shore;
-(3)all islands greater than 100 km2;
-(4)all EU islands;
-(5)the Mediterranean Sea;
-(6)all closed seas
+- Each satellite has **a swath width of 290 km** to provide systematic **coverage over the following areas**:
+1. all continental land surfaces between latitudes 84°N and 56°S;
+1. all coastal waters up to at least 20 km from the shore;
+1. all islands greater than 100 km2;
+1. all EU islands;
+1. the Mediterranean Sea;
+1. all closed seas
+---
+# Sentinel-2 data
+- Available in different processed forms(Drusch et al.,2012).
 
-
+- The main stages include Level-0, Level-1A, Level-1B, Level-1C and Level 2A.
+&lt;img src="images/format.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;center&gt;Figure: The processing levels and the format of Sentinel-2 data(Phiri et al.,2020)
 ---
 # Purpose
 &lt;div class="tabs"&gt;
@@ -66,14 +70,24 @@ following areas:
 &lt;div id="The primary objective" class="tab-content"&gt;
   &lt;ul&gt;
     &lt;li&gt;Provide high-resolution satellite data&lt;/li&gt;
-    &lt;li&gt;For land cover, climate change and disaster monitoring [9,10]&lt;/li&gt;
+    &lt;li&gt;For land cover, climate change and disaster monitoring(Malenovský et al.,2012)&lt;/li&gt;
+    &lt;li&gt;
+&lt;img src="images/purpose2.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;center&gt;Figure: Representative distribution of the articles published on Sentinel-2 land cover mapping across the world(Phiri et al.,2020)
+    &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
 
 &lt;div id="Other important objective" class="tab-content" style="display:none"&gt;
   &lt;ul&gt;
     &lt;li&gt;Complement the other global satellite programmes such as the Landsat and SPOT (Satellite Pour l’Observation de la Terre) satellite programmes &lt;/li&gt;
-    &lt;li&gt;By ensuring continuity in monitoring the dynamics on Earth’s surface [8,11,12,13]&lt;/li&gt;
+    &lt;li&gt;By ensuring continuity in monitoring the dynamics on Earth’s surface&lt;/li&gt;
+    &lt;li&gt;
+&lt;img src="images/purpose1.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;center&gt;Figure: Figure: Sentinel-2 scene of the cropland test site Marchfeld in Lower Austria, Austria. The dots represent the centroids of the reference polygons used for classification. The top-right map shows the inter- and intra-field heterogeneity observed at the S2 spatial resolution of 10 m(Immitzer, Vuolo &amp; Atzberger,2016)
+    &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
 
@@ -102,33 +116,76 @@ function showContent(tabName, event) {
   }
 }
 &lt;/script&gt;
+---
+# Applications
+### Pixel-Based Image Analysis 
+- One of the most **common classification approaches** applied to Sentinel-2.
+
+- **RF** is the most common classifiers used for pixel-based approach.
+
+- Due to the **limitations of pixel-based approaches, such as salt-and-pepper effect or speckle—spectral noise**, **sub-pixel methods** have been applied on Sentinel-2 data to improve the classification accuracy(Clark,2017). 
+
+- **To reduce mixed pixel effects**,Spectral mixture analysis (SMA) is one of the robust methods. For example, Degerickx, et al. applied Multiple Endmember Spectral Mixture Analysis (MESMA) to urban land cover/use and achieved an accuracy of 85%.
 
 ---
 # Applications
-## Sentinel-2 and Long-term Monitoring
-- Since the beginning of the 15th century, the Earth's surface has undergone rapid changes driven by agricultural expansion, climate change, and rapid urbanization. 
-- Monitoring tools like Sentinel-2 remotely sensed data are needed to continuously assess the condition of the Earth's surface and inform decision-makers about future changes. 
----
-# Applications
-## Sentinel-2 and Long-term Monitoring
-The potential to strengthen existing policies: especially monitoring long-term (&gt;5 years) land use/cover change. For example: 
-- Sentinel-2 data plays a significant role in monitoring the progress towards achieving the **Sustainable Development Goals (SDGs)**【26】. 
-- Sentinel data can be accessed **free of charge** at the Copernicus Open Access Hub. Therefore, this data has the potential to contribute to land cover/use monitoring especially in countries where **financial resources for acquiring remotely sensed data are limited**【29】.
+### Object-Based Image Analysis
+- OBIA produces higher classification accuracy compared to pixel-based(Gašparović &amp; Jogun,2018).
+- Many studies have focused on the application of **the combination of OBIA with machine-learning classifiers** on land cover/use classification (Novelli et al.,2016).
+
+&lt;img src="images/application1.jpg" width="60%" style="display: block; margin: auto;" /&gt;
+&lt;center&gt;Figure: Location of the study area depicted by means of the Red band of the Sentinel-2 image(Novelli et al.,2016)
 
 ---
 # Reflections
-- The pivotal role of Sentinel-2 data in enhancing land cover/use monitoring on a global scale, signifying a leap forward in the realm of Earth observation.
+.pull-left[
+### Opportunities
+- The revelation between OBIA and advanced ML classifiers marks a transformative shift in data processing techniques. 
 
-- The distinction in application and integration of Sentinel-2 data between developed and developing countries highlights a pivotal disparity in resource availability and technological adoption.
+- Promise incremental improvements in **land cover and use classification**.
 
-- The effectiveness of object-based image analysis (OBIA) and machine learning classifiers, such as Random Forests (RF) and Support Vector Machines (SVM), in improving land cover classification accuracy, heralds a new era in data processing techniques. These methods, capable of harnessing Sentinel-2's high-resolution data, offer profound implications for land management and policy-making.
+- Herald a paradigm shift in how we approach **environmental monitoring and land management**.
+]
+.pull-right[
+### Challenges
+- **Cloud coverage** obscures the full potential of optical satellite imagery. 
+
+- The need of **expansion of is application in untested regions**.
+
+- Its adoption is **in its early stages**, especially when juxtaposed with the legacy of the Landsat program.
+]
+
 ---
 # Reflections
-- However, the challenges posed by cloud coverage and the relatively nascent stage of Sentinel-2 imagery's global application cannot be overlooked. 
+Looking ahead, the emergence of Sentinel-2 data opens up new vistas for a diverse array of stakeholders, including the private sector, government agencies, academia, and environmental practitioners.
 
-- The need of expansion of Sentinel-2's application in untested regions compared to the more extensively used Landsat imagery.
+- This expansion is not just about scaling the heights of technological innovation; it's about **democratizing access to high-quality, timely, and actionable environmental data**. 
 
-- Looking forward, the advent of Sentinel-2 opens new horizons for the private sector, government bodies, the scientific community, and practitioners to increase the availability of high-resolution land cover/use maps at regional, national, continental, and global scales.
+- The imperative to integrate Sentinel-2 data into **regional, national, and global environmental** strategies is clear. 
+
+- The journey ahead is fraught with challenges, yet it's imbued with the promise of harnessing our planet's spectral signatures to **foster a more sustainable and resilient world**.
+
+---
+# References
+Clark, M. L. (2017). Comparison of simulated hyperspectral HyspIRI and multispectral Landsat 8 and Sentinel-2 imagery for multi-seasonal, regional land-cover mapping. Remote Sensing of Environment, 200, 311-325.
+
+Degerickx, J., Roberts, D. A., &amp; Somers, B. (2019). Enhancing the performance of Multiple Endmember Spectral Mixture Analysis (MESMA) for urban land cover mapping using airborne lidar data and band selection. Remote sensing of environment, 221, 260-273.
+
+Drusch, M., Del Bello, U., Carlier, S., Colin, O., Fernandez, V., Gascon, F., ... &amp; Bargellini, P. (2012). Sentinel-2: ESA's optical high-resolution mission for GMES operational services. Remote sensing of Environment, 120, 25-36.
+
+Gašparović, M., &amp; Jogun, T. (2018). The effect of fusing Sentinel-2 bands on land-cover classification. International journal of remote sensing, 39(3), 822-841.
+
+Immitzer, M., Vuolo, F., &amp; Atzberger, C. (2016). First experience with Sentinel-2 data for crop and tree species classifications in central Europe. Remote sensing, 8(3), 166.
+
+---
+# References
+Malenovský, Z., Rott, H., Cihlar, J., Schaepman, M. E., García-Santos, G., Fernandes, R., &amp; Berger, M. (2012). Sentinels for science: Potential of Sentinel-1,-2, and-3 missions for scientific observations of ocean, cryosphere, and land. Remote Sensing of environment, 120, 91-101.
+
+Novelli, A., Aguilar, M. A., Nemmaoui, A., Aguilar, F. J., &amp; Tarantino, E. (2016). Performance evaluation of object based greenhouse detection from Sentinel-2 MSI and Landsat 8 OLI data: A case study from Almería (Spain). International journal of applied earth observation and geoinformation, 52, 403-411.
+
+Sentinel, E. S. A. (2014). Missions-Sentinel Online. ESA: Paris, France.
+
+Phiri, D., Simwanda, M., Salekin, S., Nyirenda, V. R., Murayama, Y., &amp; Ranagalage, M. (2020). Sentinel-2 data for land cover/use mapping: A review. Remote Sensing, 12(14), 2291.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
